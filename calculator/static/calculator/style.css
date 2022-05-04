@@ -1,0 +1,44 @@
+body {
+    background-color: bisque;
+    font-family: 'Trebuchet MS', sans-serif;
+    padding: 2rem;
+}
+
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 50ch;
+
+}
+
+form > input {
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+form > label {
+    font-size: 1.5rem;
+}
+
+#result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 25ch;
+    overflow-wrap: anywhere;
+
+}
+
+#result p:first-child {
+    font-size: 2rem;
+    border: solid darkmagenta;
+    width: 25ch;
+    text-align: center;
+}
+
+#result p {
+    margin-block: 0.2rem;
+}
