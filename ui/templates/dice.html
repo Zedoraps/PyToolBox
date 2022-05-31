@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice</title>
+    <style>
+        body {
+            background-color: #262814;
+            color: white;
+            margin: 0;
+            font-family: "Copperplate Gothic Light", serif
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: auto;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            justify-items: center;
+        }
+
+        h3 {
+            font-size: 3rem;
+            font-weight: normal;
+        }
+
+        button {
+            font-size: 3rem;
+            border-radius: 1.3rem;
+            padding: 1rem;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 4rem;
+        }
+
+        form {
+            width: min(760px, 100vw);
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 1.5rem;
+            margin-top: 1em;
+        }
+
+        input {
+            font-size: 2rem;
+        }
+
+    </style>
+</head>
+<body>
+<div class="content">
+    <div>
+        <h3>Roll Dice:</h3>
+        <p>{{ result }}</p>
+    </div>
+
+    <form action="/ui/dice/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Throw</button>
+    </form>
+</div>
+<div class="content">
+    <h1>History</h1>
+    <div class="flex">
+        {% for x in history %}
+            <p>{{ x }}</p>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tipping pace</title>
+    <style>
+        body {
+            background-color: #b9f1d9;
+            margin: 0;
+            font-family: "Agency FB", serif
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: auto;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            justify-items: center;
+        }
+
+        h3 {
+            font-size: 3rem;
+            font-weight: normal;
+        }
+
+        button {
+            font-size: 3rem;
+            border-radius: 1.3rem;
+            padding: 1rem;
+            font-weight: bold;
+        }
+
+        form {
+            width: min(760px, 100vw);
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 1.5rem;
+            margin-top: 1em;
+        }
+
+        input {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 2rem;
+        }
+
+    </style>
+</head>
+<body>
+<div class="content">
+    {% if result %}
+        <div>
+            <h3>Result:</h3>
+            <h4>Number of Words per Minute</h4>
+            <p>{{ result }}</p>
+        </div>
+        <a href="../">
+            <button>Restart</button>
+        </a>
+    {% else %}
+
+
+        <form action="/ui/tipping/end/" method="post">
+            <h1>Type the following test as fast as possible:</h1>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et
+                dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet
+                clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                amet,
+                consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+                erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no
+                sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Test</button>
+        </form>
+    {% endif %}
+</div>
+
+</body>
+</html>

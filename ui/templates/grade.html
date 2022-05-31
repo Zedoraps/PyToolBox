@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Note Calculator</title>
+    <style>
+        body {
+            background-color: indianred;
+            color: white;
+            margin: 0;
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: auto;
+            align-items: start;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 5rem;
+            width: min(760px, 100vw);
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        form {
+            width: min(760px, 100vw);
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 1.5rem;
+            margin-top: 1em;
+        }
+
+        input {
+            font-size: 2rem;
+        }
+
+        button {
+            color: #ffffff;
+            background-color: #000000;
+            font-size: 19px;
+            border: 6px solid #ffffff;
+            border-radius: 20px;
+            padding: 15px 50px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            color: #2d63c8;
+            background-color: #ffffff;
+        }
+
+        ul > li {
+            list-style-type: none;
+            font-size: 3rem;
+        }
+
+        .flex {
+            display: flex;
+            width: min(760px, 100vw);
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+    </style>
+</head>
+<body>
+<div class="content">
+
+    <form action="/ui/grade/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Calculate</button>
+    </form>
+
+
+
+    {% if result %}
+        <div>
+            <ul>
+                <li><strong>Grade: {{ result }}</strong></li>
+                <li>Avg: {{ avg }}</li>
+                <li>Best: {{ max }}</li>
+                <li>Worst: {{ min }}</li>
+            </ul>
+            <div>
+                <h1>History</h1>
+                <div class="flex">
+                    {% for x in history %}
+                        <p>{{ x }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    <form action="/ui/grade/reset/" method="post">
+        {% csrf_token %}
+        <button type="submit">Reset</button>
+    </form>
+
+
+</div>
+</body>
+</html>
