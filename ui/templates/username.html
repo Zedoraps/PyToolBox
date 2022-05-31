@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Note Calculator</title>
+    <style>
+        body {
+            background-color: #031587;
+            color: white;
+            margin: 0;
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: auto;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            align-content: center;
+            justify-items: center;
+        }
+
+        h3 {
+            font-size: 3rem;
+            font-weight: normal;
+        }
+
+        button {
+            font-size: 3rem;
+            border-radius: 1.3rem;
+            padding: 1rem;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 4rem;
+        }
+
+    </style>
+</head>
+<body>
+<div class="content">
+    <div>
+        <h3>Generated Username:</h3>
+        <p>{{ username }}</p>
+    </div>
+
+    <form action="/ui/username/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Generate</button>
+    </form>
+
+
+</div>
+</body>
+</html>
+
+
+
