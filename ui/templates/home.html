@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100&display=swap');
+
+        body {
+            background: rgb(5, 31, 57);
+            background: linear-gradient(117deg, rgba(5, 31, 57, 1) 8%, rgba(45, 94, 253, 1) 84%);
+            height: 100%;
+            margin: 0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            padding: min(1rem, 3vw);
+            color: white;
+            font-family: 'Prompt', sans-serif;
+
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));;
+            gap: 1rem;
+            justify-items: center;
+        }
+
+        .content > div {
+            text-align: center;
+            width: min(250px, 80vw);
+        }
+
+        .header > span {
+            padding: 0 0.3rem;
+            display: block;
+        }
+
+        .header {
+            text-align: center;
+            font-size: 3rem;
+            padding: 0;
+            margin: 0;
+            line-height: 1.1em;
+            height: 3.5em;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 5rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            -webkit-box-shadow: -3px -2px 25px -5px rgba(0, 0, 0, 0.87);
+            box-shadow: -3px -2px 25px -5px rgba(0, 0, 0, 0.87);
+            padding: 1.5rem;
+        }
+
+    </style>
+</head>
+<body>
+<h1>
+    Just some small projects
+</h1>
+<div class="content">
+
+    <a href="/ui/dice/">
+        <div>
+            <h3 class="header"><span>🎲</span>Dice</h3>
+            <p>Throw a dice and get a random result as result</p>
+        </div>
+    </a>
+    <a href="/ui/grade/">
+        <div>
+            <h3 class="header"><span>🎓</span>Grade</h3>
+            <p>Calculate the grade depending on your scored points and the max points</p>
+        </div>
+    </a>
+    <a href="/ui/password/">
+        <div>
+            <h3 class="header"><span>🔑</span>Password Generator</h3>
+            <p>Generate a more or less secure password</p>
+        </div>
+    </a>
+    <a href="/ui/tipping/">
+        <div>
+            <h3 class="header"><span>💻</span>Tipping speed test</h3>
+            <p>Check how fast you can type</p>
+        </div>
+    </a>
+    <a href="/ui/username/">
+        <div>
+            <h3 class="header"><span>🎮</span>Username Generator</h3>
+            <p>Create a random Username</p>
+        </div>
+    </a>
+
+</div>
+</body>
+</html>

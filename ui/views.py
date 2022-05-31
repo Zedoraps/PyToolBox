@@ -12,6 +12,10 @@ zuefallswuerfel = Zufallswuerfel(6)
 tipping = Tippgeschwindigkeit()
 
 
+def home(request):
+    return render(request, 'home.html')
+
+
 def note_calculator(request):
     global calc
     # if this is a POST request we need to process the form data
