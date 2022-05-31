@@ -1,1 +1,1 @@
-web: gunicorn pytoolbox.wsgi.application --log-file -
+web: gunicorn pytoolbox.wsgi
